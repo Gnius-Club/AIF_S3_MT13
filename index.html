@@ -1,24 +1,272 @@
-<!-- 
-HTML Template for Missions, delete and replace with mission HTML
--->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Gnius Club</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-S3-M13</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-  <h1>
-    Playbook HTML Placeholder Template
-  </h1>
-  <p>
-    Replace with actual playbook code.
-  </p>
-  <script src="script.js"></script>
-</body>
 
+    <header>
+        <h1><span class="book-icon">📋</span> <strong>Playbook Misión 13: El Salto a ThingSpeak</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="timer">⏱️ 00:00</span>
+                <button id="startStop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle-input">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+            </ul>
+
+            <div class="sidebar-info">
+                <p>💡 Cada actividad está cuidadosamente diseñada para involucrar a los estudiantes.</p>
+                <p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <button id="toggle-dialogues">Mostrar todos los diálogos</button>
+
+            <!-- SECCIÓN "DE UN VISTAZO" -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Sesión Gnius</h2>
+                <p class="overview-subtitle">Resumen rápido de objetivos, materiales y preparación para el facilitador.</p>
+                <div class="overview-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">Objetivos, Secuencia y Entregable</th>
+                                <th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Objetivos:</strong>
+                                    <ul>
+                                        <li>Que los estudiantes adapten su código para enviar datos a la plataforma profesional ThingSpeak.</li>
+                                        <li>Que comprendan el rol de las API Keys y la estructura de funciones como `set_data` y `upload_data`.</li>
+                                        <li>Que conceptualicen cómo la IA facilita la migración y adaptación a nuevas librerías (SDKs).</li>
+                                    </ul>
+                                    <strong>Secuencia de Clase:</strong>
+                                    <ul>
+                                        <li><strong class="tactic-highlight">⚡A.I. GYM:</strong> Exploración de APIs profesionales y la migración de software asistida por IA.</li>
+                                        <li><strong class="tactic-highlight">⚡BRAIN SPARK (MIGRACIÓN):</strong> Adaptación, Vibe Coding, e implementación de código para una nueva plataforma.</li>
+                                        <li><strong class="tactic-highlight">⚡GNIUS STORM:</strong> Reflexión sobre el proceso de migración y la seguridad de las API Keys.</li>
+                                    </ul>
+                                    <strong>Entregable Clave:</strong>
+                                    <ul>
+                                        <li>Un sistema que migra un proyecto anterior, enviando exitosamente datos de un sensor a un canal de ThingSpeak.</li>
+                                        <li>Código que utiliza correctamente la librería `ESP8266_IoT` y la secuencia `set_data`/`upload_data` con la API Key personal.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>Materiales Específicos:</strong>
+                                    <ul>
+                                        <li>Proyector o pantalla interactiva.</li>
+                                        <li>Conexión a internet estable.</li>
+                                        <li>Acceso a MakeCode (<a href="https://makecode.microbit.org/" target="_blank">https://makecode.microbit.org/</a>) en modo Python.</li>
+                                        <li>Chat "Agente Gnius" (Xolo) operativo.</li>
+                                        <li>Cuentas de ThingSpeak creadas para cada estudiante/equipo.</li>
+                                        <li>Presentación de diapositivas (Diapositivas 1-7).</li>
+                                        <li>Por equipo de 2: 1 Micro:bit v2 con placa IOTbit, cables, y un sensor de una misión anterior (ej. BME280).</li>
+                                    </ul>
+                                    <strong>Preparación Previa para ESTA Sesión:</strong>
+                                    <ol>
+                                        <li><strong>Verificación del Entorno Digital y Físico (Interna):</strong>
+                                            <ul>
+                                                <li>Asegurarse de que todos los estudiantes hayan creado su cuenta de ThingSpeak y tengan un canal listo para recibir datos.</li>
+                                                <li>Verificar que la librería `ESP8266_IoT` esté disponible y funcional en el entorno de MakeCode.</li>
+                                                <li>Tener a mano la Write API Key de un canal de prueba.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Familiarización Conceptual y Técnica:</strong> Repasar la estructura de la librería `ESP8266_IoT` y el flujo de `set_data`/`upload_data`. Estar preparado para guiar la depuración de parámetros.</li>
+                                        <li><strong>Preparación de la Demostración Práctica:</strong> Tener un proyecto de migración funcional para demostrar cómo los datos aparecen en el gráfico de ThingSpeak.</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FIN DE LA SECCIÓN "DE UN VISTAZO" -->
+
+            <div class="activity-card" id="activity-1">
+                <h2>⚡ Actividad 1: Saludo de IA y Contexto ⏰ 3 minutos</h2>
+                <p>Establecer el tono de la sesión, activar la IA y presentar el concepto de migración de software.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Bienvenida y Contexto de la Misión</h3>
+                            <p>(Proyectar Diapositiva 2) El facilitador da la bienvenida y enmarca la sesión como una tarea de nivel profesional.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Buenos días, ingenieros. Hoy damos el salto a una herramienta de nivel profesional: ThingSpeak, una plataforma utilizada por ingenieros e investigadores en todo el mundo. La misión de hoy es una tarea esencial para cualquier desarrollador: la migración. Tomaremos un código funcional y lo adaptaremos para que se comunique con una nueva tecnología.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Activación y Personalización de Xolo</h3>
+                            <p>El facilitador guía a los alumnos para que inicien su sesión de trabajo individual con Xolo.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Inicien su sesión con Xolo como es habitual, compartiendo su perfil de aprendizaje e interés. Por ejemplo: <strong>'Hola Xolo, soy Ana, perfil Ingeniero, y me interesa la interoperabilidad de sistemas. Lista para la Misión 13.'</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-2">
+                <h2>⚡ Actividad 2: A.I. GYM (APIs Profesionales y Migración) ⏰ 10 minutos</h2>
+                <p>Construir el andamiaje conceptual sobre las API Keys y el proceso de migración de software asistido por IA.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Investigación sobre API Keys</h3>
+                            <p>(Proyectar Diapositiva 3) El facilitador dirige a los alumnos para que investiguen este concepto de seguridad.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Su investigación con Xolo hoy se centra en el proceso de migración. De forma individual, comiencen por este prompt: <strong>'Xolo, ¿qué es una "Write API Key" y por qué es tan importante para la seguridad en ThingSpeak?'</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Migración Asistida por IA</h3>
+                            <p>(Proyectar Diapositiva 4) El facilitador guía la siguiente consulta, enfocada en el rol de Xolo.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Ahora, entiendan el rol de su socio de IA en esta tarea. Pregúntenle a Xolo: <strong>'¿Cómo me ayudas a adaptar mi código a una nueva librería como la de ThingSpeak, que no conozco?'</strong> Esto les mostrará cómo usar la IA para acelerar su aprendizaje.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-3">
+                 <h2>⚡ Actividad 3: Brain Spark (Migración a ThingSpeak) ⏰ 22 minutos</h2>
+                <p>Los estudiantes diseñan, implementan y depuran un proyecto que envía datos a ThingSpeak.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Presentación del Desafío y Formación de Parejas</h3>
+                             <p>(Proyectar Diapositiva 5) El facilitador presenta el desafío de migración.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Ahora, su misión de migración. Formen sus parejas. Tomen uno de sus proyectos de sensores anteriores. Su 'vibe' será: 'migrar este sistema para que ahora envíe el dato del sensor al Campo 1 de nuestro canal de ThingSpeak'. Primero, deberán entrar a ThingSpeak, crear un canal y copiar su 'Write API Key'.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Vibe Coding y Generación del Código Adaptado</h3>
+                            <p>(Proyectar Diapositiva 6) Las parejas definen su 'vibe' de migración y colaboran con Xolo.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                 <p class="dialogue assistant">Una vez que tengan su API Key, describan la 'vibe' de migración a Xolo. Por ejemplo: <strong>'Xolo, queremos migrar nuestro monitor de temperatura. La vibe es: tomar el valor del BME280 y usar la librería `ESP8266_IoT` para enviarlo al 'Campo 1' de nuestro canal de ThingSpeak, usando nuestra API Key.'</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 3: Análisis y Depuración de Parámetros</h3>
+                             <p>(Proyectar Diapositiva 7) Las parejas implementan el código y aprenden a depurar los parámetros de las funciones.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                 <p class="dialogue assistant">Analicen el código generado. Presten especial atención a la función `set_data`. ¿Qué representa cada uno de los ceros después de su variable? La depuración de este tipo de librerías a menudo se centra en usar los parámetros correctos en el orden correcto. Si su dato aparece en el campo equivocado en ThingSpeak, ya saben dónde mirar."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-4">
+                <h2>⚡ Actividad 4: Gnius STORM (Reflexión sobre Migración) ⏰ 5 minutos</h2>
+                <p>El facilitador modera una reflexión final enfocada en el proceso de adaptación de software.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Gnius STORM (Think - Individual)</h3>
+                            <p>Los alumnos reflexionan individualmente sobre la estructura de la nueva librería.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Vamos al cierre. Primero, un minuto de reflexión individual. Piensen: ¿qué ventaja tiene un sistema de 'preparar y enviar' como el de esta librería, donde puedes preparar hasta 8 datos a la vez, comparado con enviar cada dato por separado?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Gnius STORM (Pair - Parejas)</h3>
+                            <p>Los alumnos discuten en parejas la importancia de la seguridad de las API Keys.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Ahora, en parejas, discutan por qué es crucial mantener en secreto una 'Write API Key'. ¿Qué podría hacer alguien si la obtuviera? Tienen dos minutos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 3: Gnius STORM (Share & Synthesis)</h3>
+                            <p>Algunas parejas comparten sus aprendizajes y el facilitador cierra la sesión.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Escuchemos de algunas parejas. Compartan un 'insight' o un desafío del proceso de migración de hoy. (Escuchar 2-3 respuestas). Excelente. Han completado una migración de software a una plataforma profesional, demostrando adaptabilidad, una habilidad clave. Han aprendido que aunque la tecnología cambie, su capacidad para analizar y dirigir les permite dominar nuevas herramientas rápidamente. En la próxima misión, usaremos estos datos para construir nuestra primera interfaz visual: un widget.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
